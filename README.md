@@ -22,8 +22,8 @@ DB名：wp-JIF-Corporate_db
 
 ■WordPress  
 ①XAMPPやMANPなどのhotdocsフォルダ直下にリモートリポジトリをクローンしてください  
-場所：「…¥htdocs¥GP-wp-JIF¥wordpress（ここに設置）」
-フォルダ名：wordpress（default）
+場所：「…¥htdocs¥GP-wp-JIF¥wordpress（ここに設置）」  
+フォルダ名：wordpress（default）  
 ※リネームすると本番環境に移行する際に障害が発生する可能性があるのでしません  
 ※インストール時のアクセスURL：localhost/GP-wp-JIF/wordpress/wp-admin  
 ②インストール時の設定は下記で設定してください  
@@ -33,7 +33,7 @@ DB名：wp-JIF-Corporate_db
 メール：work@gp1000.jp  
 
 ■共有する場合  
-GitHubでデータを共有をしていきます  。
+GitHubでデータを共有をしていきます。  
 必要に応じて「phpMyAdmin」のエクスポートしたsqlファイルを配布していきます。
 
 ## システム構成/プラグイン構成/ファイル構成
