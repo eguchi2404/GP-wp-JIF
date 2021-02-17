@@ -97,6 +97,12 @@ Githubを用いたチーム開発を滞りなく行えるようにすること�
   OUTPUT → WPプラグインの種類：Contact form7  
            フォームコンテンツ：名前,電話番号, メールアドレス,タイトル,本文,利用規約同意（checkBox）,利用規約リンク（利用規約はこちら）,送信ボタン  
 2. Assignee(タスクの担当者、議論の最終意思決定者)を必ず「管理者」で選択する。
+##### branchを作る
+brunch を「Github Flow」で作成する  
+※「master」ブランチと「feature」ブランチで構成される。  
+　　master：現在の製品のメインブランチです。常にデプロイ可能な状態です。  
+　　feature：masterブランチから分岐した開発用のブランチです。  
+※brunch命名規則：feature/issue番号/FILE名  [例] feature/123/home.html
 ##### pull Requestをたてる際のルール
 1. Pull Requestをたてる際は人は必要に応じて以下の情報を記入してPull Requestをたててください (この時何が終わってないのかも書くと良い)
   - Pull Requestタイトル命名規則 → WIP:該当FILE名_Pull Request内容
