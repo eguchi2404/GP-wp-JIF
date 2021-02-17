@@ -82,15 +82,15 @@ Githubを用いたチーム開発を滞りなく行えるようにすること�
 - 依頼したいタスク
 ##### issueをたてる際のルール
 1. issueをたてる際は人は必ず以下の情報を記入してissueをたててください
-  - issueタイトル命名規則 → 該当FILE名_issue内容
+  - issueタイトル命名規則 → 該当FILE名_issue内容  
   [例] CONTACT US.html_問い合わせ機能の追加
-  - SECTION → このissueはどの部分のことなのか
+  - SECTION → このissueはどの部分のことなのか  
   [例] CONTACT US.html ※固定ページのため便宜上で.htmlとしています
-  - WHY → なぜこのissueをたてたのか
+  - WHY → なぜこのissueをたてたのか  
   [例] 問い合わせフォームを実装して、ユーザーからの問い合わせを可能にする。
-  - WHAT → このisuueで何を決めたいのか
+  - WHAT → このisuueで何を決めたいのか  
   [例] WPプラグインの種類, フォームコンテンツの内容
-  - OUTPUT → 成果物として何を作り上げればこのisuueはcloseしていいのか
+  - OUTPUT → 成果物として何を作り上げればこのisuueはcloseしていいのか  
   [例]   
     WPプラグインの種類：Contact form7  
     フォームコンテンツ：名前,電話番号, メールアドレス,タイトル,本文,利用規約同意（checkBox）,利用規約リンク（利用規約はこちら）,送信ボタン
