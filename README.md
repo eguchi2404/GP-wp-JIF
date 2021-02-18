@@ -80,30 +80,25 @@ Githubを用いたチーム開発を滞りなく行えるようにすること�
 - 新しいアイディア
 - 改善したほうが良いと思ったこと
 - 依頼したいタスク
+
 ##### issueをたてる際のルール
 1. issueをたてる際は人は必ず以下の情報を記入してissueをたててください
-  - issueタイトル命名規則 → 該当FILE名_issue内容
-  - SECTION → このissueはどの部分のことなのか
-  - WHY → なぜこのissueをたてたのか
-  - WHAT → このisuueで何を決めたいのか
-  - OUTPUT → 成果物として何を作り上げればこのisuueはcloseしていいのか
-  
-
-  [例]  
-  issueタイトル命名規則 → CONTACT US.html_問い合わせ機能の追加  
-  SECTION → CONTACT US.html ※固定ページのため便宜上で.htmlとしています  
-  WHY → 問い合わせフォームを実装して、ユーザーからの問い合わせを可能にする。  
-  WHAT → WPプラグインの種類, フォームコンテンツの内容  
-  OUTPUT → WPプラグインの種類：Contact form7  
-           フォームコンテンツ：名前,電話番号, メールアドレス,タイトル,本文,利用規約同意（checkBox）,利用規約リンク（利用規約はこちら）,送信ボタン  
+  - issueタイトル命名規則 → 該当FILE名_issue内容  
+    [例] CONTACT US.html_問い合わせ機能の追加  
+  - SECTION → このissueはどの部分のことなのか  
+    [例] CONTACT US.html ※固定ページのため便宜上で.htmlとしています 
+  - WHY → なぜこのissueをたてたのか  
+    [例] 問い合わせフォームを実装して、ユーザーからの問い合わせを可能にする。  
+  - WHAT → このisuueで何を決めたいのか  
+    [例] WPプラグインの種類, フォームコンテンツの内容  
+  - OUTPUT → 成果物として何を作り上げればこのisuueはcloseしていいのか  
+    [例]  
+    WPプラグインの種類：Contact form7  
+    フォームコンテンツ：名前,電話番号,メールアドレス,タイトル,本文,利用規約同意（checkBox）,  
+    利用規約リンク（利用規約はこちら）,送信ボタン 
+            
 2. Assignee(タスクの担当者、議論の最終意思決定者)を必ず「管理者」で選択する。
-##### branchを作る
-brunch を「Github Flow」で作成する  
-※「master」ブランチと「feature」ブランチで構成される。  
-　　master：現在の製品のメインブランチです。常にデプロイ可能な状態です。  
-　　feature：masterブランチから分岐した開発用のブランチです。  
-※brunch命名規則：feature/Pull Request番号 or issue番号/FILE名  
-[例] feature/p#1/home.html
+
 ##### pull Requestをたてる際のルール
 1. Pull Requestをたてる際は人は必要に応じて以下の情報を記入してPull Requestをたててください (この時何が終わってないのかも書くと良い)
   - Pull Requestタイトル命名規則 → WIP:該当FILE名_Pull Request内容
@@ -113,6 +108,22 @@ brunch を「Github Flow」で作成する
   - TECHNICAL CHANGES → 変更概要,なにをどう変更・追加したか,どういうロジックか
   - UI CAPTURE → 変更前のキャプチャと変更後のキャプチャ
   - OTHER → レビュアーに対する注意点,リリースに対する注意点など
+
+##### branchを作る
+brunch を「Github Flow」で作成する  
+※「master」ブランチと「feature」ブランチで構成される。  
+　　master：現在の製品のメインブランチです。常にデプロイ可能な状態です。  
+　　feature：masterブランチから分岐した開発用のブランチです。  
+※brunch命名規則：feature/Pull Request番号 or issue番号/パラメーター_FILE名  
+[例] feature/p#1/add_home.html  
+■パラメーターには下記を用いてください
+- add → 新規作成
+- update → 更新
+- hotfix → 緊急
+- bug → バグ
+- final → 最終
+- release → リリース時
+- support → 保守運用
 
 ## テスト方法
 弊社ではWPプラグイン「Public Post Preview」を用いてWEBページの表示テストを行います。  
