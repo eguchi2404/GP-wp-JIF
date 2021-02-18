@@ -86,6 +86,7 @@ Githubを用いたチーム開発を滞りなく行えるようにすること�
 1. issueをたてる際は人は必ず以下の情報を記入してissueをたててください
   - issueタイトル命名規則 → 該当FILE名_issue内容  
     [例] CONTACT US.html_問い合わせ機能の追加  
+  - PHASE → 今はどの段階のフェーズなのか（要件定義,仕様設計,構築/設定,開発,テスト,リリース,保守運用）  
   - SECTION → このissueはどの部分のことなのか  
     [例] CONTACT US.html ※固定ページのため便宜上で.htmlとしています 
   - WHY → なぜこのissueをたてたのか  
@@ -105,6 +106,7 @@ Githubを用いたチーム開発を滞りなく行えるようにすること�
    (この時何が終わってないのかも書くと良い)
   - Pull Requestタイトル命名規則 → WIP:該当FILE名_Pull Request内容
   - 関連URL（issue,Pull Requestなど）
+  - PHASE → 今はどの段階のフェーズなのか（要件定義,仕様設計,構築/設定,開発,テスト,リリース,保守運用）  
   - SECTION → このPull Requestはどの部分のことなのか
   - WHY → なぜこのPull Requestをたてたのか,なにが終わっていないのか
   - TECHNICAL CHANGES → 変更概要,なにをどう変更・追加したか,どういうロジックか
