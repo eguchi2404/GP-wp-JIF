@@ -60,16 +60,3 @@ module_loop_★ポストタイプ名★.php
 //     $footer_widget_area_count = 4; // ← 1~4の半角数字で設定してください。
 //     return $footer_widget_area_count;
 // }
-
-/*-------------------------------------------*/
-/*  <head>タグ内に自分の追加したいタグを追加する
-/*-------------------------------------------*/
-function add_wp_head_custom(){ ?>
-<!-- head内に書きたいコード -->
-<?php }
-// add_action( 'wp_head', 'add_wp_head_custom',1);
-
-function add_wp_footer_custom(){ ?>
-<!-- footerに書きたいコード -->
-<?php }
-// add_action( 'wp_footer', 'add_wp_footer_custom', 1 );
