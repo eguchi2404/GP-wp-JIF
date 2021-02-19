@@ -118,8 +118,8 @@ brunch を「Github Flow」で作成する
 ※「master」ブランチと「feature」ブランチで構成される。  
 　　master：現在の製品のメインブランチです。常にデプロイ可能な状態です。  
 　　feature：masterブランチから分岐した開発用のブランチです。  
-※brunch命名規則：feature/Pull Request番号 or issue番号/パラメーター_FILE名  
-[例] feature/p#1/add_home.html  
+※brunch命名規則：feature/issue番号/パラメーター_SECTION名  
+[例] feature/#1/add_home
 ■パラメーターには下記を用いてください
 - add → 新規作成
 - update → 更新
