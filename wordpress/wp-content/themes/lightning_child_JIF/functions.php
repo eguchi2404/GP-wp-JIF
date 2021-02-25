@@ -1,5 +1,29 @@
 <?php
 
+//Googleフォント(Noto Sans JP)読み込み
+wp_enqueue_style('Noto_Sans_Japanese', 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+
+//固定ページのpタグ自動挿入解除
+add_filter('the_content', 'wpautop_filter', 9);
+function wpautop_filter($content)
+{
+    global $post;
+    $remove_filter = false;
+
+    $arr_types = array('page'); //自動整形を無効にする投稿タイプを記述 ＝固定ページ
+    $post_type = get_post_type($post->ID);
+    if (in_array($post_type, $arr_types)) {
+        $remove_filter = true;
+    }
+
+    if ($remove_filter) {
+        remove_filter('the_content', 'wpautop');
+        remove_filter('the_excerpt', 'wpautop');
+    }
+
+    return $content;
+}
+
 /*-------------------------------------------*/
 /*  カスタム投稿タイプ「イベント情報」を追加
 /*-------------------------------------------*/
@@ -50,7 +74,7 @@ VK_アーカイブウィジェット で、今回作成したカスタム投稿�
 カスタム投稿タイプのループ部分やサイドバーをカスタマイズしたい場合は、
 下記の命名ルールでファイルを作成してアップしてください。
 module_loop_★ポストタイプ名★.php
-*/
+ */
 
 /*-------------------------------------------*/
 /*  フッターのウィジェットエリアの数を増やす
@@ -64,12 +88,14 @@ module_loop_★ポストタイプ名★.php
 /*-------------------------------------------*/
 /*  <head>タグ内に自分の追加したいタグを追加する
 /*-------------------------------------------*/
-function add_wp_head_custom(){ ?>
-<!-- head内に書きたいコード -->
+function add_wp_head_custom()
+{ ?>
+    <!-- head内に書きたいコード -->
 <?php }
 // add_action( 'wp_head', 'add_wp_head_custom',1);
 
-function add_wp_footer_custom(){ ?>
-<!-- footerに書きたいコード -->
+function add_wp_footer_custom()
+{ ?>
+    <!-- footerに書きたいコード -->
 <?php }
 // add_action( 'wp_footer', 'add_wp_footer_custom', 1 );
