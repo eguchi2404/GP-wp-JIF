@@ -137,11 +137,11 @@ function add_custom_scripts() {
   }  else if (is_single()) {
     // 個別投稿ページ
     add_style_if_exists('style_posted', $child_theme_uri.'/css/postedPageCSS/style_posted.css');
-    add_script_if_exists('scripte_posted', $child_theme_uri.'/js/postedPageJS/scripte_posted.js');
+    add_script_if_exists('script_posted', $child_theme_uri.'/js/postedPageJS/script_posted.js');
     // 英語ページ
     if ($locale == 'en_US') {
       add_style_if_exists('style_posted_en', $child_theme_uri.'/css/en/postedPageCSS/style_posted_en.css');
-      add_script_if_exists('scripte_posted_en', $child_theme_uri.'/js/en/postedPageJS/scripte_posted_en.js');
+      add_script_if_exists('script_posted_en', $child_theme_uri.'/js/en/postedPageJS/script_posted_en.js');
     }
   }
 }
