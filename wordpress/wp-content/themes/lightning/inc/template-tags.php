@@ -17,7 +17,6 @@
   lightning_check_color_mode
 /*-------------------------------------------*/
 
-
 /*
   lightning_get_the_class_name
 /*-------------------------------------------*/
@@ -88,14 +87,12 @@ function lightning_the_class_name( $position = '', $extend = array() ) {
 	echo lightning_get_the_class_name( $position, $extend );
 }
 
-
-
 /*
   Theme default options
 /*-------------------------------------------*/
 function lightning_get_theme_options_default() {
 	$theme_options_default = array(
-		'front_pr_display'              => true,
+		'front_pr_display'              => false,
 		'top_slide_time'                => 4000,
 		'top_slide_image_1'             => get_template_directory_uri() . '/assets/images/top_image_1.jpg',
 		'top_slide_url_1'               => __( 'https://lightning.nagoya/', 'lightning' ),
@@ -128,10 +125,10 @@ function lightning_theme_options_default() {
   lightning_get_theme_options()
 /*-------------------------------------------*/
 function lightning_get_theme_options() {
-	$lightning_theme_options_default = lightning_get_theme_options_default();
-	$lightning_theme_options         = get_option( 'lightning_theme_options', $lightning_theme_options_default );
-	// It use then display default text to old user ... orz
-	// $lightning_theme_options         = wp_parse_args( $lightning_theme_options, $lightning_theme_options_default );
+	$lightning_theme_options         = get_option( 'lightning_theme_options', lightning_get_theme_options_default() );
+	// Cope with https://wordpress.org/themes/lightning/ theme preview and so on
+	// 注意 : wp_parse_args() は「連想配列の上書き挙動要確認」「スライドテキストがnullの時に公開画面側にも表示されてしまう？」ので一旦不使用
+	// $lightning_theme_options         = wp_parse_args( $lightning_theme_options, $defaults );
 	return $lightning_theme_options;
 }
 
