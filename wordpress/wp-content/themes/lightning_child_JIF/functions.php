@@ -61,31 +61,11 @@ module_loop_★ポストタイプ名★.php
 //     return $footer_widget_area_count;
 // }
 
-/*-------------------------------------------*/
-/*  <head>タグ内に自分の追加したいタグを追加する
-/*-------------------------------------------*/
-function add_wp_head_custom(){ ?>
-<!-- head内に書きたいコード -->
-<?php }
-// add_action( 'wp_head', 'add_wp_head_custom',1);
-
-function add_wp_footer_custom(){ ?>
-<!-- footerに書きたいコード -->
-<?php }
-// add_action( 'wp_footer', 'add_wp_footer_custom', 1 );
-
-/*-------------------------------------------*/
-/*  
-/*-------------------------------------------*/
-
-<?php
-
-
 /*  -------------------------------------------
   ファイルが存在する場合のみCSSを適用する
   -------------------------------------------*/
 function add_style_if_exists($name, $path) {
-  if (file_exists($pagh)) {
+  if (file_exists($path)) {
     wp_enqueue_style($name, $path);
   }
 }
@@ -94,7 +74,7 @@ function add_style_if_exists($name, $path) {
   ファイルが存在する場合のみJavaScriptを適用する
   -------------------------------------------*/
 function add_script_if_exists($name, $path) {
-  if (file_exists($pagh)) {
+  if (file_exists($path)) {
     wp_enqueue_script($name, $path, ['jquery']);
   }
 }
