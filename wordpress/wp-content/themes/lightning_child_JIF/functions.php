@@ -24,6 +24,52 @@ function wpautop_filter($content)
     return $content;
 }
 
+//CSS,JS読み込み
+function add_files()
+{
+    $locale = get_locale();
+
+    $child_theme_uri = get_stylesheet_directory_uri();
+
+    // WordPress提供のjquery.jsを読み込まない
+    wp_deregister_script('jquery');
+    // jQueryの読み込み
+    wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false);
+    // サイト共通JS
+    wp_enqueue_script('_common', $child_theme_uri . '/js/common.js', ['jquery']);
+    //英語版共通CSS
+    if ($locale == 'en_US') {
+        wp_enqueue_style('style_en', $child_theme_uri . '/css/en/style_en.css');
+    }
+    // 検索フォームCSS
+    wp_enqueue_style('searchform', $child_theme_uri . '/css/searchform.css');
+    // PolylangメニューカスタマイズCSS    
+    wp_enqueue_style('polylang', $child_theme_uri . '/css/polylang.css');
+    // 検索結果CSS
+    if (is_search()) {
+        wp_enqueue_style('search', $child_theme_uri . '/css/search.css');
+    }  // 固定ページ
+    else if (is_page()) {
+        $slug = get_post(get_the_ID())->post_name;
+        if (is_front_page()) {
+            // トップページ
+            wp_enqueue_style('home', $child_theme_uri . '/css/home.css');
+            wp_enqueue_script('home', $child_theme_uri . '/js/home.js', ['jquery']);
+        } else {
+            // その他固定ページ
+            $name = preg_replace('/_en$/', '', $slug);
+            wp_enqueue_style($name, $child_theme_uri . '/css/' . $name . '.css');
+            wp_enqueue_script($name, $child_theme_uri . '/js/' . $name . '.js', ['jquery']);
+        }
+        // 英語ページ
+        // if (preg_match('/_en$/', $slug)) {
+        if ($locale == 'en_US') {
+            wp_enqueue_style($slug, $child_theme_uri . '/css/en/' . $slug . '.css');
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'add_files');
+
 /*-------------------------------------------*/
 /*  カスタム投稿タイプ「イベント情報」を追加
 /*-------------------------------------------*/
