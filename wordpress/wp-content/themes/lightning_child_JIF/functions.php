@@ -70,6 +70,45 @@ function add_files()
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
+//非公開記事の40表示用
+function my_get_404_status()
+{
+
+    global $wp_query;
+
+    if (is_404()) {
+
+        if ($wp_query->found_posts == 0) {
+            return false;
+        }
+
+        /* 固定ページ */
+        if (isset($wp_query->queried_object->post_status)) {
+
+            return array($wp_query->queried_object->ID, $wp_query->queried_object->post_status);
+        }
+
+        /* 投稿 */
+        if (isset($wp_query->request)) {
+
+            $id = $wpdb->get_var($wp_query->request);
+            return array($id, get_post_status($id));
+        }
+    }
+}
+
+//メニューに検索ボックス追加
+add_filter('wp_nav_menu_items', 'add_search_box', 10, 2);
+function add_search_box($items, $args)
+{
+    ob_start();
+    get_search_form();
+    $searchform = ob_get_contents();
+    ob_end_clean();
+    $items .= '<li class="menu-item menu-search-box">' . $searchform . '</li>';
+    return $items;
+}
+
 /*-------------------------------------------*/
 /*  カスタム投稿タイプ「イベント情報」を追加
 /*-------------------------------------------*/
